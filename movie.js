@@ -25,18 +25,18 @@ const createMovieCards = async () => {
   console.log(movies);
   const cardList = document.querySelector(".card-list");
 
-  for (let i = 0; i < movies.length; i++) {
+  movies.forEach((movie) => {
     const addTargetCard = document.createElement("div");
-    addTargetCard.id = movies[i].id;
+    addTargetCard.id = movie.id;
     addTargetCard.className = "movie-card";
     addTargetCard.innerHTML = `
-      <img src="https://image.tmdb.org/t/p/w500${movies[i].poster_path}" alt="${movies[i].title}">
-      <h3 class="movie-title">${movies[i].title}</h3>
-      <p class="movie-overview">${movies[i].overview}</p>
-      <br>
-      <p class="movie-rating">Rating: ${movies[i].vote_average}</p>`;
+    <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+    <h3 class="movie-title">${movie.title}</h3>
+    <p class="movie-overview">${movie.overview}</p>
+    <br>
+    <p class="movie-rating">Rating: ${movie.vote_average}</p>`;
     cardList.appendChild(addTargetCard);
-  }
+  });
 
   cardList.addEventListener("click", (event) => {
     const target = event.target;
