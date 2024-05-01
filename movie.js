@@ -59,6 +59,7 @@ const createMovieCards = async () => {
 
 // 검색 시 검색창에 있는 텍스트가 제목에 포함된 영화 카드만 화면에 표시되도록 하는 함수
 const handleSearch = (event) => {
+  // 버튼 눌릴 시 새로고침 방지
   event.preventDefault();
 
   const searchInput = document.getElementById("search-input");
@@ -83,4 +84,3 @@ const searchForm = document.getElementById("search");
 searchForm.addEventListener("submit", handleSearch);
 
 createMovieCards();
-및;
